@@ -1,9 +1,9 @@
-/* MIN MAX CLOSE Remove */
+/* Show MIN/MAX/CLOSE buttons */
 #TabsToolbar > .titlebar-buttonbox-container{ visibility: collapse !important; }
 
 /* Avoids white flash? */
 #tabbrowser-tabpanels{
-  background-color: var(--uc-light-bkgnd-color, #1a1a1b) !important;
+	background-color: var(--uc-light-bkgnd-color, #1a1a1b) !important;
 }
 /* Left ?
 .titlebar-buttonbox-container{ -moz-box-ordinal-group: 0 !important; }
@@ -17,7 +17,7 @@
 
 /* Non active tabs have darker text */
 	.tabbrowser-tab:not([visuallyselected="true"]):not([multiselected]):not(:hover) {
-		color: #ffffff5e !important;
+		color: #ffffff7a !important;
 	}
 
 
@@ -44,7 +44,21 @@ change (#navigator-toolbox) with your top bar (in this case #nav-bar) and use
 		border-top: 0px !important;
 		
 	}
+	
+/* Drop Down URL with BLUR need layout.css.backdrop-filter.enabled = true 
+	.urlbarView {
+		background-image: url(image/noise-512x512.png) !important;
+		background-color: #2A2A2AC0 !important;
+		-webkit-backdrop-filter: blur(32px) !important;
+		backdrop-filter: blur(32px) !important;
+		-moz-backdrop-filter: blur(32px) !important;
+	}*/ 
+	#urlbar-background {
+		display: none !important;
 
+	}
+	
+	
 	
 	
 /* Bookmarks bar with BLUR need layout.css.backdrop-filter.enabled = true */
@@ -52,10 +66,10 @@ change (#navigator-toolbox) with your top bar (in this case #nav-bar) and use
 
 		background-image: url(image/noise-512x512.png) !important;
 		background-color: #2A2A2AC0 !important;
-		-webkit-backdrop-filter: blur(32px) !important;
+		-webkit-backdrop-filter: blur(20px) !important;
 		backdrop-filter: blur(32px) !important;
 		/* -webkit-backdrop-filter: blur(32px) !important;*/
-		-moz-backdrop-filter: blur(32px) !important;
+		-moz-backdrop-filter: blur(20px) !important;
 	}
 
 /* Remove the top tab line - TopBar */
@@ -73,7 +87,7 @@ change (#navigator-toolbox) with your top bar (in this case #nav-bar) and use
 
 /* Scrollbar */
 .	panel-subview-body, #permList, scrollbar { 
-		scrollbar-width: thin;
+		scrollbar-width: medium;
 	}
  
 /* Icons */
@@ -146,7 +160,6 @@ change (#navigator-toolbox) with your top bar (in this case #nav-bar) and use
 	#PlacesToolbarItems > .bookmark-item{ padding-block: var(--uc-bm-padding) !important; }
 
 		/* SELECT BOOKMARKS TOOLBAR BEHAVIOR
-
 		Show when urlbar is focused
 		#nav-bar:focus-within + #PersonalToolbar{
 		  transition-delay: 100ms !important;
@@ -199,24 +212,23 @@ change (#navigator-toolbox) with your top bar (in this case #nav-bar) and use
 	}
 	
 /* Search Bar #2b2b2bd1 262626ed #1E1E1EBF*/
-	#urlbar-background {
-		display: none !important;
-
-	}
-	#urlbar-input-container, #searchbar {
-		border-radius: 8px !important;
-	}
 	#urlbar-container {
 		border-radius: 8px 8px 8px 8px !important;
 		/* padding-top: 0px !important;
 		padding-bottom: 0px !important;*/
+		
+	}
+	#urlbar-input-container, #searchbar {
+		border-radius: 8px !important;
 	}
 	#urlbar[breakout]{
 		height: var(--urlbar-height) + 1 !important;
 		
 	}
 	#urlbar[breakout][breakout-extend] {
-		background-color: rgba(38, 38, 38, 0.98)  !important;
+		background-image: url(image/noise-512x512.png) !important;
+		background-color: #1E1E1EBF;
+		backdrop-filter: blur(32px) !important;
 		
 	}
 	
@@ -231,7 +243,6 @@ change (#navigator-toolbox) with your top bar (in this case #nav-bar) and use
 		left: 0 !important;
 		width: 100% !important;
 	}
-	
 	
 	.urlbarView.megabar .urlbarView-body-inner {
 		border-top: 0px !important;
@@ -295,7 +306,7 @@ isnt formated for different border radius */
 
 /* Width of the tabs. Important to have Fadein or it breaks fonctionality */
 	.tabbrowser-tab[fadein]:not([pinned]) { 
-	    max-width: 135px !important; /* 135px */
+	    max-width: 160px !important; /* 135px */
 		min-width: var(--my-tab-min-width) !important;
 		/*transition:none;
 		transition: min-width 300ms ease-out , max-width 100ms ease-out !important;*/
@@ -380,8 +391,20 @@ toolbar #tabs-newtab-button:not([disabled="true"]):-moz-any([open], [checked], :
 	
 }
 
-/* SMOOTH AUTOHIDE TAB BAR 
+/* Show Tab close button on hover */
+.tabbrowser-tab:not([pinned]) .tab-close-button {
+  display: -moz-box !important;
+  opacity: 0;
+  visibility: collapse !important;
+ transition: opacity 0.25s, visibility 0.25s ease-in !important;
+}
+.tabbrowser-tab:not([pinned]):hover .tab-close-button {
+  opacity: 1;
+  visibility: visible !important; 
+} 
 
+
+/* SMOOTH AUTOHIDE TAB BAR 
 @keyframes slidein{
   from{ margin-top: calc(0px - var(--tab-min-height)) }
   to{ margin-top: 0 }
@@ -394,8 +417,6 @@ toolbar #tabs-newtab-button:not([disabled="true"]):-moz-any([open], [checked], :
 #navigator-toolbox:not(:hover)  #TabsToolbar:not([customizing]) { visibility: collapse }
 #navigator-toolbox:hover > #nav-bar:not([customizing]){ animation: slidein ease-out 48ms 1 }
 #navigator-toolbox:not(:hover) > #nav-bar:not([customizing]){ animation: slideout ease-out 80ms 1 }
-
-
 #tabbrowser-tabpanels{
   background-color: var(--uc-light-bkgnd-color,#323639) !important;
 }
@@ -432,7 +453,6 @@ visibility: collapse !important;
 /* ========================================================= */
 
 /* Show tab close button when cursor is over the tab icon 
-
 .tab-close-button{
   -moz-box-ordinal-group: 0;
   display: -moz-box !important;
@@ -443,29 +463,10 @@ visibility: collapse !important;
 }
 .tabbrowser-tab[pinned] .tab-close-button{ display: none !important; }
 .tab-close-button:hover{ background-color: var(--lwt-accent-color); }
-
 .tabbrowser-tab[selected] .tab-close-button:hover{ background-color: var(--lwt-selected-tab-background-color, var(--toolbar-bgcolor)); }
-
-
 .tab-icon-image:hover ~ .tab-close-button,
 .tab-close-button:hover,
 .tab-icon-image:not([src]) ~ .tab-label-container:hover ~ .tab-close-button{ visibility: visible; z-index: 1 }
 .tab-icon-image:not([src]) ~ .tab-label-container:hover ~ .tab-close-button,
 .tab-icon-image:not([src]) ~  .tab-close-button:hover {margin-right: 0px !important; }
-
 	*/
-
-/* Show Tab close button on hover */
-.tabbrowser-tab:not([pinned]) .tab-close-button {
-  display: -moz-box !important;
-  opacity: 0;
-  visibility: collapse !important;
- transition: opacity 0.25s, visibility 0.25s ease-in !important;
-}
-.tabbrowser-tab:not([pinned]):hover .tab-close-button {
-  opacity: 1;
-  visibility: visible !important; 
-}
-
-
-
