@@ -138,33 +138,28 @@ change (#navigator-toolbox) with your top bar (in this case #nav-bar) and use
 /* #toolbar-menubar[autohide]:not([inactive]), */
 /* #toolbar-menubar[autohide="true"]:not([inactive]) + #TabsToolbar > .titlebar-buttonbox-container{ visibility: collapse !important; } */
 
-/* Remove or comment out transition if you want synchronization with the autohide bookmarks bar and tab bar*/
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/autohide_bookmarks_toolbar.css */
+
 /* BOOKMARK MENU AUTOHIDE */
 	#PersonalToolbar{
 	  --uc-bm-height: 20px; /* Might need to adjust if the toolbar has other buttons */
 	  --uc-bm-padding: 6px; /* Vertical padding to be applied to bookmarks */
+	  --uc-autohide-toolbar-delay: 400ms; /* The toolbar is hidden after 0.6s */
 	}
 
 	:root[uidensity="compact"] #PersonalToolbar{ --uc-bm-padding: 1px }
-	:root[uidensity="touch"] #PersonalToolbar{ --uc-bm-padding: 6px }
+	:root[uidensity="touch"] #PersonalToolbar{ --uc-bm-padding: 7px }
 
 	#PersonalToolbar:not([customizing]){
-	  margin-bottom: calc(2px - var(--uc-bm-height) - 2 * var(--uc-bm-padding));
+	  position: relative;
+	  margin-bottom: calc(0px - var(--uc-bm-height) - 2 * var(--uc-bm-padding));
 	  transform: rotateX(90deg);
 	  transform-origin: top;
-	  transition: transform 135ms linear 600ms !important;  
-	  z-index: 2;
-	  
-
+	  transition: transform 135ms linear var(--uc-autohide-toolbar-delay) !important;  
+	  z-index: 1;
 	}
-	#PlacesToolbarItems > .bookmark-item{ padding-block: var(--uc-bm-padding) !important; }
 
-		/* SELECT BOOKMARKS TOOLBAR BEHAVIOR
-		Show when urlbar is focused
-		#nav-bar:focus-within + #PersonalToolbar{
-		  transition-delay: 100ms !important;
-		  transform: rotateX(0);
-		}*/
+	#PlacesToolbarItems > .bookmark-item{ padding-block: var(--uc-bm-padding) !important; }
 
 	/* Show when cursor is over the toolbar area */
 	#navigator-toolbox:hover > #PersonalToolbar{
