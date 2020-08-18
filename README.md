@@ -1,4 +1,4 @@
-# Firefox-Mod
+# Mi configuración de Firefox | Manjaro KDE - Firefox 80.0b6 - Default Dark Theme
 
 ### About:config
 
@@ -9,14 +9,22 @@
 | browser.bookmarks.showMobileBookmarks  | false |
 |      browser.tabs.drawInTitlebar       | true  |
 |           gfx.webrender.all            | true  |
+| toolkit.legacyUserProfileCustomizations.stylesheets| true|
 
-### Configuración para Firefox 75
+### CSS Hacks para cambiar la interfaz de Firefox [Source](https://github.com/MrOtherGuy/firefox-csshacks)
 
--   Open FF Profile Directory (Help > Troubleshooting > Open Dir)
--   Create a dir called `chrome` and put these files in it.
--   `sideberyDynHover` is to be used with the Sidebery extension.
+-   Ir a about:profiles
+-   Crear un directorio `chrome` y poner los archivos de este repositorio ahí.
 
-## Dont forget to enable 'toolkit.legacyUserProfileCustomizations.stylesheets' in about:config for your custom themes to work.
+```bash
+~/.mozilla/firefox/dev-edition-default/chrome
+❯ ls
+image/  searchBar.css  userChrome.css  userContent.css
+```
+
+-   `sideberyDynHover` se usa con la extensión [Sidebery](https://addons.mozilla.org/en-US/firefox/addon/sidebery/).
+
+## :warning: No olvides habilitar 'toolkit.legacyUserProfileCustomizations.stylesheets' en about:config para que tus estilos funcionen.
 
 ### `searchBar.css`
 
@@ -24,31 +32,6 @@
 
 ![alt text](https://i.redd.it/wpubm02rzfr41.png)
 
-Tested on:
-
-```html
-Manjaro Linux / Firefox 75.0b10 / Default Dark Theme
-```
-
-![alt text](https://i.imgur.com/Hi1ocvT.png)
-
-You can find more in 'userChrome.css'
-
-```css
-/* Comment this to show min/max/close buttons. I use OS style firefox plugin. */
-#TabsToolbar > .titlebar-buttonbox-container {
-	visibility: collapse !important;
-}
-```
-
-```css
-/* Width of the tabs. Change it to 100% to get full 
-width style tabs. But it looks funny, make search 
-bar transparent so it looks better with full width */
-.tabbrowser-tab[fadein]:not([pinned]) {
-	max-width: 135px !important;
-}
-```
 
 ![alt text](https://i.imgur.com/8IUIq2g.png)
 
