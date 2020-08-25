@@ -8,8 +8,16 @@
 | browser.tabs.loadBookmarksInBackground | true  |
 | browser.bookmarks.showMobileBookmarks  | false |
 |      browser.tabs.drawInTitlebar       | true  |
-|           gfx.webrender.all            | true  |
 | toolkit.legacyUserProfileCustomizations.stylesheets| true|
+
+### HW Acceleration on Linux (X11)
+|                  Key                   | Value |
+| :------------------------------------: | :---: |
+|           gfx.webrender.all            | true  |
+|       media.ffmpeg.vaapi.enabled       | true  |
+|          media.ffvpx.enabled           | false  |
+
+- Exportar la variable `MOZ_X11_EGL=1` (Agregarla al archivo `/etc/environment`)
 
 ### [CSS Hacks]((https://github.com/MrOtherGuy/firefox-csshacks)) para cambiar la interfaz de Firefox
 
