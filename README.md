@@ -21,6 +21,8 @@
 
 ### [CSS Hacks]((https://github.com/MrOtherGuy/firefox-csshacks)) para cambiar la interfaz de Firefox
 
+- [Tutorial](https://www.reddit.com/r/FirefoxCSS/comments/73dvty/tutorial_how_to_create_and_livedebug_userchromecss/)
+
 ![Firefox](https://i.imgur.com/l6TpXkU.png)
 
 -   Ir a about:profiles
