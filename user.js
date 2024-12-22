@@ -201,9 +201,6 @@ user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
 user_pref("browser.newtabpage.activity-stream.showWeather", false);
 user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
 
-/** POCKET ***/
-user_pref("extensions.pocket.enabled", false);
-
 /** DOWNLOADS ***/
 user_pref("browser.download.manager.addToRecentDocs", false);
 
@@ -233,6 +230,9 @@ user_pref("identity.fxaccounts.enabled", true);
 
 // PREF: ask whether to open or save new file types
 user_pref("browser.download.always_ask_before_handling_new_types", true);
+
+/** POCKET ***/
+user_pref("extensions.pocket.enabled", false);
 
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
