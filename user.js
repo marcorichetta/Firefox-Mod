@@ -225,14 +225,12 @@ user_pref("layout.css.prefers-color-scheme.content-override", 2);
 user_pref("browser.newtabpage.activity-stream.showWeather", true);
 user_pref("browser.newtabpage.activity-stream.system.showWeather", true);
 
-// PREF: disable Firefox Sync
-user_pref("identity.fxaccounts.enabled", true);
-
 // PREF: ask whether to open or save new file types
 user_pref("browser.download.always_ask_before_handling_new_types", true);
 
-/** POCKET ***/
-user_pref("extensions.pocket.enabled", false);
+// PREF: Disable tab previews
+user_pref("browser.tabs.hoverPreview.enabled", false);
+user_pref("browser.tabs.hoverPreview.showThumbnails", false);
 
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
