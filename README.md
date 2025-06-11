@@ -1,7 +1,7 @@
 <h2 align="center"><a href="#wrench-installation"><img src="https://user-images.githubusercontent.com/61329159/204102654-0e414196-bea2-4147-9e1e-aeb8b4190893.png" width="20" height="20" /></a> Firefox Mod Blur - Modular</h2>
 
 <p align="center">
-<a href="#page_facing_up-other"><img alt="Version" src="https://img.shields.io/badge/Last%20tested%20Firefox-v137.0-blue?style=flat&logo=firefox&logoColor=white"></a>
+<a href="#page_facing_up-other"><img alt="Version" src="https://img.shields.io/badge/Last%20tested%20Firefox-v138.0-blue?style=flat&logo=firefox&logoColor=white"></a>
 <a href="#shield-last-updates"><img alt="Updated Date" src="https://img.shields.io/badge/Updated-01/04/2025-blueviolet?style=flat"></a>
 <img alt="Created" src="https://img.shields.io/badge/Updated%20since-2020-important?style=flat">
 	
@@ -74,7 +74,30 @@
 
 <details><summary>Extension menu changes :gear:</summary>
 <i>Style 1 - cleaner_extensions_menu.css</i><p align="left"><img alt="FirefoxCss" src="https://github.com/datguypiko/Firefox-Mod-Blur/blob/master/EXTRA%20MODS/Compact%20extensions%20menu/Style%201/preview.gif?raw=true" width="325" height="398"></p>
-<i>Style 2 - cleaner_extensions_menu.css</i><p align="left"><img alt="FirefoxCss" src="https://github.com/datguypiko/Firefox-Mod-Blur/blob/master/EXTRA%20MODS/Compact%20extensions%20menu/Style%202/preview.png?raw=true"></p></details>
+<i>Style 2 - cleaner_extensions_menu.css</i><p align="left"><img alt="FirefoxCss" src="https://github.com/datguypiko/Firefox-Mod-Blur/blob/master/EXTRA%20MODS/Compact%20extensions%20menu/Style%202/preview.png?raw=true"></p>
+
+
+## How to enable/disable extra functionality
+
+In search bar type -> `about:config`
+ 
+If it's configured using numbers select `number` else select `boolean` and press add -> `+`
+
+> To reset default values `delete` the added preference or set it to `false` (for boolean).
+> 
+> To find all added preferences search "mod."
+
+## Copy and Enable preferred modifications:
+
+| Preference name | Value       | Notes                       | Preview |
+|----------------|--------------|-----------------------------------|-----------------------------------|
+| mod.number.of.extensions.in.a.row                 | 1 to 10    | Change number of extensions in one row. Default [4]      | ![preview-number-of-extensions](https://github.com/user-attachments/assets/f73ed998-c70e-441e-8572-3361b4793cca) |
+| mod.extensions.menu.extention-icon.size           | 12 to 30    | Change extensions icons size. Default [22]  | ![preview-extension-menu-icon-size](https://github.com/user-attachments/assets/1d7c0815-dff3-4c4f-9f12-3a981e989e0b) |
+| mod.hide.manage-extensions.button                 | true   | Hide the button that opens all extensions manager inside settings. |  ![Hide-extension-button](https://github.com/user-attachments/assets/eb191a66-3cb5-4f2c-905d-57c44fef941f) |
+| mod.disable.extensions-menu.separator             | true   | Hide sepatator between active and inactive/faded extensions. Only visible when there is at least one faded extension.  | ![image](https://github.com/user-attachments/assets/f40b7043-9917-46a4-b3c1-4eb0ea510ed3) |
+| mod.hide.faded-extensions.inside.extensions-menu  | true   | Hide all faded/inactive non interactable extensions from extension menu. Not necessary if they aren't visible by default.  | ![preview-with-button](https://github.com/user-attachments/assets/531b9958-40f0-4e12-95dd-649519670b10) |
+
+</details>
 
 <details><summary>Icon changes :gear:</summary>
 <i>firefox_view_icon_change.css</i><p align="left"><img alt="FirefoxCss" src="https://i.imgur.com/wuA50MP.png"></p>
@@ -164,7 +187,7 @@ Installation Instructions https://github.com/Alan-Kuan/Firefox-Mod-Blur#page_wit
 <h2>:wrench: MicaForEveryone Installation</h2>
 
 > [!Warning]
-> ##### Coming soon again in firefox v133,v134 or v135. Will probably come with v3.0.
+> ##### Coming soon again with v3.0 version.
  
 1. Download the portable or installation file from [github.com/MicaForEveryone](https://github.com/MicaForEveryone/MicaForEveryone/releases).
 2. Install the extra files it asks you to install. And run the program.
